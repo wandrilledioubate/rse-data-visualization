@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 @st.cache_data(persist="disk")
 def load_data():
-    data=pd.read_csv("donnee-dep-data.gouv-2022-geographie2023-produit-le2023-07-17.csv", sep=";")
+    data=pd.read_csv("code/donnee-dep-data.gouv-2022-geographie2023-produit-le2023-07-17.csv", sep=";")
     data['annee'] = data['annee'].astype(str)
     data['Code.département'] = data['Code.département'].astype(str)
     return data
