@@ -2,10 +2,12 @@ import streamlit as st
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
+import geopandas as gpd
+
 
 @st.cache_data(persist="disk")
 def load_data():
-    data=pd.read_csv("code/donnee-dep-data.gouv-2022-geographie2023-produit-le2023-07-17.csv", sep=";")
+    data=pd.read_csv("./donnee-dep-data.gouv-2022-geographie2023-produit-le2023-07-17.csv", sep=";")
     data['annee'] = data['annee'].astype(str)
     data['Code.département'] = data['Code.département'].astype(str)
     return data
@@ -89,12 +91,13 @@ def heatmap_incident():
     fig2, ax = plt.subplots(1, 1, figsize=(10, 10))
     merged.plot(column='faits', cmap='coolwarm', linewidth=0.8, ax=ax, edgecolor='0.8', legend=True)
 
+
     # Définir les limites pour un zoom sur l'Île-de-France
     idf_bounds = merged[merged["nom"].isin(["Paris", "Seine-et-Marne", "Yvelines", "Essonne", "Hauts-de-Seine", "Seine-Saint-Denis", "Val-de-Marne", "Val-d'Oise"])].total_bounds
     ax.set_xlim(idf_bounds[0], idf_bounds[2])
     ax.set_ylim(idf_bounds[1], idf_bounds[3])
     ax.set_title("Heatmap of Incidents in Île-de-France")
-    st.pyplot(fig2)
+    st.pyplot(fig2) 
 
     """
     # display table

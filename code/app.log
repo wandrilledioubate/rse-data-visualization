@@ -64,3 +64,4 @@
 2023-10-26 17:14:36,372 - Temps d'exécution: 2.00 secondes
 2023-10-26 17:19:50,362 - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2023-10-26 17:19:50,400 - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2023-10-26 18:35:35,183 - Temps d'exécution: 2.01 secondes
